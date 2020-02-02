@@ -147,6 +147,7 @@ Similarly, for view-port width. `80vw` is **80% of the view-port width.**
 
 > Every CSS property must have a value!
 
+
 ![Inheritance css](InheritanceCSS.png)
 
 ##### What we need to know:
