@@ -157,3 +157,117 @@ Similarly, for view-port width. `80vw` is **80% of the view-port width.**
  * The computed value of a property is what gets inherited. **not** the declared value.
  * Inheritance of a property only works if no one declares a value for the property.
  * the `inherit` keyword resets a property to its initial value.
+ 
+ #### The Visual Formatting Model
+ Algorithm that calculates boxes ad determines the layout of these boxes, for each element in the render tree,
+ in order to determine the final layout of the page.
+ 
+ * Dimensions of boxes: the box model
+ * Box type: inline, block, inline-block
+ * Positioning scheme: floats and positioning.
+ * Stacking contexts.
+ * other elements in the render tree
+ * Viewport size, dimensions of images etc..
+ 
+#####1. The Box Model
+![Box Model](BoxModel.png)
+
+**Heights and Widths:**
+
+
+**total width** = right border + right padding + specified width + left padding + left border
+
+**total height** =  top border + top padding + specified height + bottom padding + bottom border
+
+**Example** height = 0 + 20px + 100px + 20px + 0 = 140px
+
+With `box-sizing: border-box;`, we wont add `paddings` and `borders` to the element height and width.
+But rather, we would just decrease the content width and height.
+
+**With Box-Sizing: Border-Box:**
+
+**total width** = ~~right border~~ + ~~right padding~~ + specified width + ~~left padding~~ + ~~left border~~
+
+**total height** =  ~~top border~~ + ~~top padding~~ + specified height + ~~bottom padding~~ + ~~bottom border~~
+
+**Example** height = ~~0~~ + ~~20px~~ + 100px + ~~20px~~ + ~~0~~ = ~~140px~~ 100px
+
+##### 2 Box Types: Inline, Block-level And Inline-Block
+  
+* Block-level boxes:        
+    - Elements formatted visually as blocks.
+    - 100% of parent's width.
+    - Vertically, one after another.
+
+Ex:
+```$xslt
+display: block;
+(display: flex)
+(display: list-item)
+(display: table)
+```
+
+* Inline Boxes:
+    - Content is distributed in lines.
+    - Occupies only content's space
+    - No line-breaks
+    - No heights and widths.
+    - Paddings and marigins only horizontal(left and right)
+
+Ex:
+```$xslt
+display: inline;
+```
+
+Okay, We just saw that we cannot apply heights and widths. also, there  are restrictions
+in paddings and marigins. uff. to overcome that we have yet another type.
+
+* Inline-block Boxes:
+  - A mix of block and inline.
+  - Occupies only content's space
+  - No line-breaks
+  - Box-model applies as showed
+  
+Ex:
+```$xslt
+display: inline-block;
+```
+
+#####3. Positioning Schemes: Normal FLow, Absolute positioning and floats.
+
+* Normal Flow:
+    - Default positioning scheme.
+    - **NOT** floated
+    - **NOT** absolutely positioned
+    - Elements laid out according to their order.
+Ex:
+```$xslt
+position: relative;
+```
+* Floats:
+    - **Element is removed from the normal flow**
+    - Text and inline elements will wrap around the floated element.
+    - The container will not adjust its height to the element. (use `clearfix` to fix that)
+    
+Ex:
+```$xslt
+float: left;
+float: right;
+```
+* Absolute positioning:
+    - **Element is removed from the normal flow**
+    - No impact on surrounding content and elements.
+    - We use `top`, `bottom`, `left`, `right` to offset the element from its relatuvely positioned container.
+
+    
+Ex:
+```$xslt
+position: absolute;
+position: fixed;
+```
+
+###Stacking Contexts! ~ `z-index`
+> Not just z-index produces stacking context. there are other properties like
+>opacity, filters, transform also creates stacking context.
+
+![Stacking Context](StackingContext.png)
