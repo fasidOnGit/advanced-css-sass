@@ -4,6 +4,7 @@
   "description": "Landing page for natours.",
   "main": "index.js",
   "scripts": {
+    "start": "live-server",
     "compile:sass": "node-sass sass/main.scss css/style.css -w"
   },
   "keywords": [],

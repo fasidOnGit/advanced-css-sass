@@ -9,3 +9,11 @@
   position: relative;
   font-size: 1.6rem;
 }
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

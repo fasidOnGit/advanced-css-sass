@@ -289,3 +289,13 @@ Sass is a CSS preprocessor, an extension of CSS that adds power and elegance to 
 - **Functions**: similar to mixins, with the difference that they produce a value that can then be used later.
 - **Extends**: to make different selectors inherit declarations that are common to all of them.
 - **Control Directives**: for writing complex code using conditional and loops. (need to cover seperatly)
+
+
+### Basic Responsive Design Principles
+
+1. FLUID GRIDS and LAYOUTS
+    > TO allow content to easily adapt to current viewport width used to browse the website. Uses `%` rather than `px` for all layout-related lengths.
+2. FLEXIBLE/RESPONSIVE IMAGES
+    > Images behave differently than text content, and so we need to ensure that they also adapt nicely to the current viewport.
+3. MEDIA QUERIES
+    > To change styles on certain viewport widths (breakpoints). allowing us to create different version of our website for different widths.
