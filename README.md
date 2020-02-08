@@ -169,7 +169,7 @@ Similarly, for view-port width. `80vw` is **80% of the view-port width.**
  * other elements in the render tree
  * Viewport size, dimensions of images etc..
  
-#####1. The Box Model
+##### 1. The Box Model
 ![Box Model](BoxModel.png)
 
 **Heights and Widths:**
@@ -233,7 +233,7 @@ Ex:
 display: inline-block;
 ```
 
-#####3. Positioning Schemes: Normal FLow, Absolute positioning and floats.
+##### 3. Positioning Schemes: Normal FLow, Absolute positioning and floats.
 
 * Normal Flow:
     - Default positioning scheme.
@@ -266,8 +266,26 @@ position: absolute;
 position: fixed;
 ```
 
-###Stacking Contexts! ~ `z-index`
+### Stacking Contexts! ~ `z-index`
 > Not just z-index produces stacking context. there are other properties like
 >opacity, filters, transform also creates stacking context.
 
 ![Stacking Context](StackingContext.png)
+
+### CSS Architecture
+![CSS Architecture](CSSArchetecture.png)
+
+
+### What is SASS?
+Sass is a CSS preprocessor, an extension of CSS that adds power and elegance to the basic language.
+
+#### Main Features of SASS
+
+- **Variables**: for reusable values such as colors, font-sizes, spacing etc..
+- **Nesting**: to nest selectors inside of one another, allowing us to write less code.
+- **Operators**: for mathematical operations right inside of CSS;
+- **Partials and imports**: to write CSS in different files and importing them all into one signal file.
+- **Mixins**: to write reusable pieces of CSS code.
+- **Functions**: similar to mixins, with the difference that they produce a value that can then be used later.
+- **Extends**: to make different selectors inherit declarations that are common to all of them.
+- **Control Directives**: for writing complex code using conditional and loops. (need to cover seperatly)
