@@ -1,0 +1,48 @@
+
+@keyframes moveInLeft {
+  /*When the animations starts*/
+  /*For browser performance animate only opacity and transform property.*/
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  /*When the animation finishes*/
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  /*When the animations starts*/
+  /*For browser performance animate only opacity and transform property.*/
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  /*When the animation finishes*/
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  /*When the animations starts*/
+  /*For browser performance animate only opacity and transform property.*/
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  /*When the animation finishes*/
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
