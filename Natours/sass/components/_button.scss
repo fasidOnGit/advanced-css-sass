@@ -1,8 +1,5 @@
 .btn {
-  &:link {
-    @extend %btn-placeholder;
-  }
-  &:visited {
+  &:link, &:visited {
     @extend %btn-placeholder;
   }
   &:hover {
@@ -41,5 +38,31 @@
     animation: moveInBottom .5s ease-out;
     animation-delay: .75s;
     animation-fill-mode: backwards;
+  }
+}
+
+.btn-text {
+  &:link, &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+  }
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    //0 for X, 1rem for Y, 2rem for blurm and rgba for color.
+    box-shadow: 0 1rem 2rem rgba($color-black, .15);
+    //bump up the button.
+    transform: translateY(-2px);
+    transition: all .2s;
+  }
+  &:active {
+    //On Click to feel like the button is pressed. reduce the box shadow and translate.
+    box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+    //bump up the button.
+    transform: translateY(0px);
   }
 }
